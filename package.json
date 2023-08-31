@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "SET DEBUG=latihan-server:* && nodemon ./bin/www"
+    "start": "set debug=latihan-server:* && nodemon start ./bin/www"
   },
   "dependencies": {
     "@casl/ability": "^6.5.0",

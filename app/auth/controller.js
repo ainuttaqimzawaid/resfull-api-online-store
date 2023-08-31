@@ -18,7 +18,7 @@ const register = async (req, res, next) => {
                 error: 1,
                 message: err.message,
                 fields: err.errors
-            })
+            });
         }
         next(err);
     }

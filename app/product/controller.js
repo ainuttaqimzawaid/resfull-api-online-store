@@ -196,8 +196,6 @@ const index = async (req, res, next) => {
             }
         }
 
-        console.log(criteria)
-
         let count = await Product.find().countDocuments(criteria);
 
         let product = await Product
