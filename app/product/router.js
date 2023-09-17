@@ -10,12 +10,12 @@ router.get('/products',
 );
 router.post('/products',
     multer({ dest: os.tmpdir() }).single('image'),
-    police_check('create', 'Product'),
+    // police_check('create', 'Product'),
     productController.store
 );
 router.put('/products/:id',
     multer({ dest: os.tmpdir() }).single('image'),
-    police_check('update', 'Product'),
+    // police_check('update', 'Product'),
     productController.update
 );
 router.delete('/products/:id',

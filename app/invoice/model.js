@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const { schema } = require('../cart-item/model');
 const { model, Schema } = mongoose;
 
-const invoiceSchema = new Schema({
+const invoiceSchema = Schema({
+
     sub_total: {
         type: Number,
-        required: [true, 'subtotal harus diisi']
+        required: [true, 'sub_total harus diisi'],
     },
 
     delivery_fee: {
@@ -14,10 +14,10 @@ const invoiceSchema = new Schema({
     },
 
     delivery_address: {
-        provinsi: { type: String, required: [true, 'Provinsi harus diisi'] },
-        kabupaten: { type: String, required: [true, 'Kabupaten harus diisi'] },
-        kecamatan: { type: String, required: [true, 'Kecamatan harus diisi'] },
-        kelurahan: { type: String, required: [true, 'Kelurahan harus diisi'] },
+        provinsi: { type: String, required: [true, 'provinsi harus diisi.'] },
+        kabupaten: { type: String, required: [true, 'kabupaten harus diisi.'] },
+        kecamatan: { type: String, required: [true, 'kecamatan harus diisi.'] },
+        kelurahan: { type: String, required: [true, 'kelurahan harus diisi.'] },
         detail: { type: String }
     },
 

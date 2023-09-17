@@ -16,7 +16,6 @@ const invoiceRoute = require('./app/invoice/router');
 
 
 // set debug=latihan-server:* && nodemon start
-// update deliveryaddress
 var app = express();
 
 // view engine setup

@@ -65,6 +65,6 @@ userSchema.pre('save', function (next) {
     next()
 });
 
-// userSchema.plugin(AutoIncrement, { inc_field: 'customer_id' });
+userSchema.plugin(AutoIncrement, { id: 'customer_id', inc_field: 'customer_id', reference_fields: 'role' });
 
 module.exports = model('User', userSchema);

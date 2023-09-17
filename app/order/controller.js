@@ -9,8 +9,7 @@ const store = async (req, res, next) => {
         let { delivery_fee, delivery_address } = req.body;
         let items = await CartItem.find({ user: req.user._id }).populate('product');
         if (!items) {
-            retur
-            res.json({
+            return res.json({
                 error: 1,
                 message: `You're not create order because you have not items in cart`
             })

@@ -6,7 +6,7 @@ router.post('/delivery-addresses',
     police_check('create', 'DeliveryAddress'),
     deliveryAddressController.store
 );
-router.delete('delivery-addresses/:id',
+router.put('/delivery-addresses/:id',
     deliveryAddressController.update
 );
 router.delete('/delivery-addresses/:id',

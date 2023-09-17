@@ -23,7 +23,6 @@ const store = async (req, res, next) => {
 }
 
 const update = async (req, res, next) => {
-    console.log('ini router Update');
     try {
         let { _id, ...payload } = req.body;
         let { id } = req.params;
