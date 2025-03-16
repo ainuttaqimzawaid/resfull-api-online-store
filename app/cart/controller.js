@@ -5,9 +5,11 @@ const update = async (req, res, next) => {
     try {
         const { items } = req.body;
         const productIds = items.map(item => item.product._id);
+        console.log(items)
         const products = await Product.find({ _id: { $in: productIds } });
         let cartItems = items.map(item => {
             let relatedProduct = products.find(product => product._id.toString() === item.product._id);
+            console.log(item.qty)
             return {
                 product: relatedProduct._id,
                 price: relatedProduct.price,
@@ -17,7 +19,6 @@ const update = async (req, res, next) => {
                 qty: item.qty
             }
         });
-
         await CartItem.deleteMany({ user: req.user._id });
         await CartItem.bulkWrite(cartItems.map(item => {
             return {

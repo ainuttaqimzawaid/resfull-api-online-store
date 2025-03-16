@@ -31,7 +31,7 @@ const orderSchema = Schema({
     order_items: [{ type: Schema.Types.ObjectId, ref: 'OrderItem' }]
 }, { timestamps: true })
 
-orderSchema.plugin(AutoIncrement, { inc_field: 'order_number' });
+// orderSchema.plugin(AutoIncrement, { inc_field: 'order_number' });
 orderSchema.virtual('items_count').get(function () {
     return this.order_items.reduce((total, item) => total + parseInt(item.qty), 0);
 });
